@@ -1,4 +1,5 @@
 package com.mystudy.db;
+// dbcp를 이용하여 커넥션 객체를 빌려오는 클래스
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +13,7 @@ import javax.sql.DataSource;
 
 public class ConnectionPoolMgr2 {
 	DataSource ds;
-
+	
 	public ConnectionPoolMgr2() {
 		Context ctx;
 		
@@ -24,25 +25,21 @@ public class ConnectionPoolMgr2 {
 		}
 	}
 	
-	//Connection객체 대여
 	public Connection getConnection() throws SQLException {
 		Connection conn = ds.getConnection();
 		//=> Connection Pool에서 Connection을 빌려온다
-		System.out.println("db연결 여부, conn = " + conn);
 		
+		System.out.println("db연결여부, conn="+conn);
 		return conn;
 	}
-	
-	//Connection개체 반납
-	public void dbClose(PreparedStatement ps,  Connection conn) throws SQLException{
+	//connection 객체반납
+	public void dbClose(PreparedStatement ps, Connection conn) throws SQLException {
 		if(ps!=null) ps.close();
 		if(conn!=null) conn.close();
 	}
-	
-	public void dbClose(PreparedStatement ps, ResultSet rs,
-			Connection conn) throws SQLException{
+	public void dbClose(ResultSet rs, PreparedStatement ps, Connection conn) throws SQLException {
+		if(rs!=null) rs.close();
 		if(ps!=null) ps.close();
-		if(rs!=null)rs.close();
-		if(conn!=null) conn.close();				
+		if(conn!=null) conn.close();
 	}
 }

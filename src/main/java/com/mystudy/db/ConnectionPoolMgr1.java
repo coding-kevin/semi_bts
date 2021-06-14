@@ -24,8 +24,8 @@ public class ConnectionPoolMgr1 {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("드라이버 로딩 성공!");
-			//url="jdbc:oracle:thin:@DESKTOP-T4EQAIT:1521:xe";	
-			url = "jdbc:oracle:thin:@DESKTOP-V9HI5C8:1521:xe";
+//			url="jdbc:oracle:thin:@DESKTOP-K313T60:1521:xe";	
+			url="jdbc:oracle:thin:@DESKTOP-OM5V34J:1521:xe";	
 			user="herb"; 	
 			pwd="herb123";
 			
@@ -47,16 +47,13 @@ public class ConnectionPoolMgr1 {
 			System.out.println("sql 예외발생!"); 
 		}
 	}//생성자
-
 	
 	public static ConnectionPoolMgr1 getInstance() {
-		if(instance == null) {
-			instance = new ConnectionPoolMgr1();
+		if(instance==null) {
+			instance= new ConnectionPoolMgr1();
 		}
-		
 		return instance;
 	}
-	
 	
 	public synchronized Connection getConnection() //jsp - 요청시 Thread로 처리
 			throws SQLException{
@@ -133,16 +130,16 @@ public class ConnectionPoolMgr1 {
 	
 	
 	//자원해제하는 메서드
-	public void dbClose(PreparedStatement ps,  Connection conn) throws SQLException{
+	public void dbClose(PreparedStatement ps,  Connection con) throws SQLException{
 		if(ps!=null) ps.close();
-		if(conn!=null)returnConnection(conn);
+		if(con!=null)returnConnection(con);
 	}
 	
 	public void dbClose(ResultSet rs,  PreparedStatement ps,  
-			Connection conn) throws SQLException{
+			Connection con) throws SQLException{
 		if(rs!=null)rs.close();
 		if(ps!=null) ps.close();
-		if(conn!=null)returnConnection(conn);				
+		if(con!=null)returnConnection(con);				
 	}
 	
 }//class
