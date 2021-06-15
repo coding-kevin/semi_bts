@@ -1,56 +1,80 @@
 package com.bts.plan.model;
 
-public class TourPlaceVO {
-	private int TNo;
-	private String TName;
-	private String TAddress;
-    private String homepage;
-	private String TInfo;
-    private String latitude;
-    private String longitude;
+public class TourplaceVO {
+
+	private int placeNo;
+	private String placeName;
+	private String placetitle;
+	private String placeAddress;
+	private String placeTel;
+	private String homepage;
+	private String placeInfo;
+	private String latitude;
+	private String longitude;
 	private int catNo;
-	private int TPNo;
+	private String imageURL;
+	private String imagemain;
 	
-	public TourPlaceVO() {
+	public TourplaceVO() {
 		super();
 	}
 
-	public TourPlaceVO(int tNo, String tName, String tAddress, String homepage, String tInfo, String latitude,
-			String longitude, int catNo, int tPNo) {
+	public TourplaceVO(int placeNo, String placeName, String placetitle, String placeAddress, String placeTel,
+			String homepage, String placeInfo, String latitude, String longitude, int catNo, String imageURL,
+			String imagemain) {
 		super();
-		TNo = tNo;
-		TName = tName;
-		TAddress = tAddress;
+		this.placeNo = placeNo;
+		this.placeName = placeName;
+		this.placetitle = placetitle;
+		this.placeAddress = placeAddress;
+		this.placeTel = placeTel;
 		this.homepage = homepage;
-		TInfo = tInfo;
+		this.placeInfo = placeInfo;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.catNo = catNo;
-		TPNo = tPNo;
+		this.imageURL = imageURL;
+		this.imagemain = imagemain;
 	}
 
-	public int getTNo() {
-		return TNo;
+	public int getPlaceNo() {
+		return placeNo;
 	}
 
-	public void setTNo(int tNo) {
-		TNo = tNo;
+	public void setPlaceNo(int placeNo) {
+		this.placeNo = placeNo;
 	}
 
-	public String getTName() {
-		return TName;
+	public String getPlaceName() {
+		return placeName;
 	}
 
-	public void setTName(String tName) {
-		TName = tName;
+	public void setPlaceName(String placeName) {
+		this.placeName = placeName;
 	}
 
-	public String getTAddress() {
-		return TAddress;
+	public String getPlacetitle() {
+		return placetitle;
 	}
 
-	public void setTAddress(String tAddress) {
-		TAddress = tAddress;
+	public void setPlacetitle(String placetitle) {
+		this.placetitle = placetitle;
+	}
+
+	public String getPlaceAddress() {
+		return placeAddress;
+	}
+
+	public void setPlaceAddress(String placeAddress) {
+		this.placeAddress = placeAddress;
+	}
+
+	public String getPlaceTel() {
+		return placeTel;
+	}
+
+	public void setPlaceTel(String placeTel) {
+		this.placeTel = placeTel;
 	}
 
 	public String getHomepage() {
@@ -61,12 +85,12 @@ public class TourPlaceVO {
 		this.homepage = homepage;
 	}
 
-	public String getTInfo() {
-		return TInfo;
+	public String getPlaceInfo() {
+		return placeInfo;
 	}
 
-	public void setTInfo(String tInfo) {
-		TInfo = tInfo;
+	public void setPlaceInfo(String placeInfo) {
+		this.placeInfo = placeInfo;
 	}
 
 	public String getLatitude() {
@@ -93,12 +117,31 @@ public class TourPlaceVO {
 		this.catNo = catNo;
 	}
 
-	public int getTPNo() {
-		return TPNo;
+	public String getImageURL() {
+		return imageURL;
 	}
 
-	public void setTPNo(int tPNo) {
-		TPNo = tPNo;
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
 	}
+
+	public String getImagemain() {
+		return imagemain;
+	}
+
+	public void setImagemain(String imagemain) {
+		this.imagemain = imagemain;
+	}
+
+	@Override
+	public String toString() {
+		return "TourplaceDTO [placeNo=" + placeNo + ", placeName=" + placeName + ", placetitle=" + placetitle
+				+ ", placeAddress=" + placeAddress + ", placeTel=" + placeTel + ", homepage=" + homepage
+				+ ", placeInfo=" + placeInfo + ", latitude=" + latitude + ", longitude=" + longitude + ", catNo="
+				+ catNo + ", imageURL=" + imageURL + ", imagemain=" + imagemain + "]";
+	}
+
+	
+	
 	
 }

@@ -22,6 +22,8 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+    <!-- map 작은창 -->
+    <link rel="styleSheet" href="<%=request.getContextPath()%>/css/planmap.css">
 
   </head>
 

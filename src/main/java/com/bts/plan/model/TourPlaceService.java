@@ -4,13 +4,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class TourPlaceService {
-	private TourPlaceDAO tpDao;
+	private TourplaceDAO tpDao;
 	
 	public TourPlaceService() {
-		tpDao = new TourPlaceDAO();
+		tpDao = new TourplaceDAO();
 	}
 	
-	public List<TourPlaceVO> selecAll() throws SQLException{
-		return  tpDao.selecAll();
+	public List<TourplaceVO> selectAll() throws SQLException{
+		return tpDao.selectAll();
 	}
 }
